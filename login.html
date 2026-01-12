@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign In</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow: auto;
+  background: #fff;
+}
+
+.header {
+  height: 65px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo-img { height: 32px; }
+
+.brand {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  width: 420px;
+  height: 40px;
+  padding: 0 14px 0 42px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-btn img { width: 18px; }
+
+.btn-login {
+  display: inline-block;
+  height: 38px;
+  padding: 0 22px;
+  border-radius: 10px;
+  border: 2px solid #2a0b2f;
+  background: #fff;
+  color: #2a0b2f;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  line-height: 38px;
+  box-shadow: 0 2px 8px rgba(44, 0, 60, 0.08);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, box-shadow 0.3s, color 0.2s, border 0.2s;
+}
+.btn-login:hover {
+  background: linear-gradient(90deg, #f3eaff, #2a0b2f);
+  color: #160018;
+  border-color: #fff;
+  box-shadow: 0 4px 16px rgba(44, 0, 60, 0.15);
+  text-decoration: underline;
+}
+
+.btn-signup {
+  display: inline-block;
+  height: 38px;
+  padding: 0 24px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #160018, #2a0b2f);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  text-align: center;
+  line-height: 38px;
+  box-shadow: 0 2px 8px rgba(44, 0, 60, 0.12);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, box-shadow 0.3s, color 0.2s;
+}
+.btn-signup:hover {
+  background: linear-gradient(90deg, #2a0b2f, #fff);
+  color: #160018;
+  box-shadow: 0 4px 16px rgba(44, 0, 60, 0.18);
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 65px);
+}
+
+.login-box {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-inner {
+  width: 420px;
+}
+
+.login-inner h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.btn-submit {
+  margin-top: 10px;
+  padding: 14px;
+  width: 160px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, #160018, #2a0b2f);
+  color: #fff;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 28px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #999;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+}
+
+.social-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.social-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* RIGHT IMAGE */
+.image-box {
+  width: 50%;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 992px) {
+  .search-box input { width: 220px; }
+  .login-inner { width: 360px; }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    gap: 12px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+  }
+  .search-box { display: none; }
+  .header-right { width: 100%; display:flex; justify-content: flex-end; gap:8px; }
+
+  .container { flex-direction: column; }
+  .login-box, .image-box { width: 100%; }
+  .login-inner { width: 100%; padding: 20px; }
+  .image-box { height: 260px; }
+  .image-box img { height: 100%; object-fit: cover; }
+
+  .social { flex-direction: column; }
+  .social-btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .brand { font-size: 18px; }
+  .logo-img { height: 28px; }
+  .btn-submit { width: 100%; }
+  .social-btn { padding: 12px; }
+  .btn-login, .btn-signup { padding: 0 12px; height: 36px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <img src="../img/logo.png" class="logo-img">
+    <span class="brand">Byway</span>
+    <a href="#" class="nav-link">Categories</a>
+
+    <div class="search-box">
+      <img src="../img/search.png" class="search-icon">
+      <input type="text" placeholder="Search courses">
+    </div>
+  </div>
+
+  <div class="header-right">
+    <a href="#" class="nav-link">Teach on Byway</a>
+    <img src="../img/icon.png" class="cart-icon" alt="cart">
+    <a class="btn-login" href="login.html">Login Up</a>
+    <a class="btn-signup" href="resign.html">Sign Up</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- LOGIN -->
+  <div class="login-box">
+    <div class="login-inner">
+      <h2>Sign in to your account</h2>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" placeholder="Username or Email ID">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password">
+      </div>
+
+      <button class="btn-submit">Sign In →</button>
+
+      <div class="divider">Sign in with</div>
+
+      <div class="social">
+        <button class="social-btn">
+          <img src="../img/facebook.png"> Facebook
+        </button>
+        <button class="social-btn">
+          <img src="../img/google.png"> Google
+        </button>
+        <button class="social-btn">
+          <img src="../img/microsoft.png"> Microsoft
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="image-box">
+    <img src="../img/banerlogin.png">
+  </div>
+
+</main>
+
+</body>
+</html>
