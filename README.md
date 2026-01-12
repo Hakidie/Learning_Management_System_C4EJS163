@@ -1,1 +1,3 @@
-# Learning-Management-System---VTHNHK---C4EJS163
+# Class: C4EJS163
+# Project: Learning Management System
+#Group: VTHNHK
