@@ -1,545 +1,771 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Design Courses</title>
 
-<style>
+  <style>
+    body {
+      margin: 0;
+      background: #fff;
+      font-family: Arial, sans-serif;
+    }
 
-body {
-  margin: 0;
-  background: #fff;
-  font-family: Arial, sans-serif;
-}
-.page-container {
-  padding: 24px 40px;
-}
+    .page-container {
+      padding: 24px 40px;
+    }
 
-.page-header h2 {
-  font-size: 26px;
-  margin-bottom: 8px;
-}
+    .page-header h2 {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
 
-.content-area {
-  display: flex;
-  gap: 32px;
-  margin-top: 20px;
-}
+    .content-area {
+      display: flex;
+      gap: 32px;
+      margin-top: 20px;
+    }
 
-.sidebar {
-  width: 220px;
-}
+    .sidebar {
+      width: 220px;
+    }
 
-.filter-box {
-  margin-bottom: 20px;
-}
+    .filter-box {
+      margin-bottom: 20px;
+    }
 
-.filter-box h4 {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
+    .filter-box h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
 
-.filter-list li {
-  list-style: none;
-  margin-bottom: 6px;
-}
+    .filter-list li {
+      list-style: none;
+      margin-bottom: 6px;
+    }
 
-.courses {
-  flex: 1;
-}
+    .courses {
+      flex: 1;
+    }
 
-.course-top {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 16px;
-}
+    .course-top {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
 
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
 
-.course-card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 10px;
-  background: #fff;
-}
+    .course-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 10px;
+      background: #fff;
+    }
 
-.course-thumb {
-  width: 100%;
-  border-radius: 12px;
-}
+    .course-thumb {
+      width: 100%;
+      border-radius: 12px;
+    }
 
-.course-meta {
-  font-size: 12px;
-  color: #777;
-  margin: 6px 0;
-}
+    .course-meta {
+      font-size: 12px;
+      color: #777;
+      margin: 6px 0;
+    }
 
-.course-price {
-  font-size: 16px;
-  font-weight: bold;
-}
+    .course-price {
+      font-size: 16px;
+      font-weight: bold;
+    }
 
-.pagination {
-  margin-top: 18px;
-  display: flex;
-  gap: 6px;
-}
+    .pagination {
+      margin-top: 18px;
+      display: flex;
+      gap: 6px;
+    }
 
-.pagination button {
-  padding: 6px 10px;
-  border: 1px solid #aaa;
-  background: #fff;
-  border-radius: 6px;
-}
+    .pagination button {
+      padding: 6px 10px;
+      border: 1px solid #aaa;
+      background: #fff;
+      border-radius: 6px;
+    }
 
-.pagination .active {
-  background: #000;
-  color: #fff;
-}
+    .pagination .active {
+      background: #000;
+      color: #fff;
+    }
 
-.mentors-section,
-.featured-courses {
-  margin: 40px 0;
-}
+    .mentors-section,
+    .featured-courses {
+      margin: 40px 0;
+    }
 
-.mentors-section h3,
-.featured-courses h3 {
-  font-size: 22px;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
+    .mentors-section h3,
+    .featured-courses h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
 
-.mentor-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
-}
+    .mentor-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
 
-.mentor-card {
-  background: #fff;
-  border-radius: 12px;
-  text-align: center;
-  padding: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
+    .mentor-card {
+      background: #fff;
+      border-radius: 12px;
+      text-align: center;
+      padding: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
 
-.mentor-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
+    .mentor-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
 
-.mentor-card h4 {
-  font-size: 16px;
-  margin: 6px 0 2px;
-  font-weight: 600;
-}
+    .mentor-card h4 {
+      font-size: 16px;
+      margin: 6px 0 2px;
+      font-weight: 600;
+    }
 
-.mentor-card p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 6px;
-}
+    .mentor-card p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 6px;
+    }
 
-.mentor-card span {
-  font-size: 14px;
-  display: block;
-  color: #444;
-}
+    .mentor-card span {
+      font-size: 14px;
+      display: block;
+      color: #444;
+    }
 
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
 
-.featured-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
+    .featured-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
 
-.featured-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
+    .featured-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
 
-.featured-card h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
+    .featured-card h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
 
-.featured-card span {
-  font-size: 14px;
-  color: #444;
-  display: block;
-  margin-bottom: 4px;
-}
+    .featured-card span {
+      font-size: 14px;
+      color: #444;
+      display: block;
+      margin-bottom: 4px;
+    }
 
-.featured-card strong {
-  font-size: 16px;
-  font-weight: 700;
-  display: block;
-  margin-top: 4px;
-}
+    .featured-card strong {
+      font-size: 16px;
+      font-weight: 700;
+      display: block;
+      margin-top: 4px;
+    }
 
-.footer {
-  background: #1d1d2b;
-  color: #ccc;
-  padding: 40px;
-  margin-top: 40px;
-}
+    .footer {
+      background: #1d1d2b;
+      color: #ccc;
+      padding: 40px;
+      margin-top: 40px;
+    }
 
-.footer-grid {
-  display: flex;
-  justify-content: space-between;
-}
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+    }
 
-.footer-col h4 {
-  color: #fff;
-}
+    .footer-col h4 {
+      color: #fff;
+    }
 
-.social-icons {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
+    .social-icons {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
 
-.social-icons .header-icon {
-  width: auto;
-  height: auto;
-  max-width: 150px;
-  max-height:150px;
-  display: inline-block;
-  object-fit: contain;
-}
+    .social-icons .header-icon {
+      width: auto;
+      height: auto;
+      max-width: 150px;
+      max-height: 150px;
+      display: inline-block;
+      object-fit: contain;
+    }
 
-@media (max-width: 1200px) {
-  .course-grid { grid-template-columns: repeat(2, 1fr); }
-  .featured-grid { grid-template-columns: repeat(3, 1fr); }
-  .mentor-grid { grid-template-columns: repeat(4, 1fr); }
-}
+    @media (max-width: 1200px) {
+      .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-@media (max-width: 992px) {
-  .header { padding: 12px 20px; height: auto; gap: 12px; }
-  .search-box input { width: 300px; }
-  .course-grid { grid-template-columns: 1fr; gap: 16px; }
-  .featured-grid { grid-template-columns: repeat(2, 1fr); }
-  .mentor-grid { grid-template-columns: repeat(3, 1fr); }
-  .sidebar { display: none; }
-  .page-container { padding: 16px; }
-}
+      .featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-@media (max-width: 768px) {
-  .header { flex-direction: column; align-items: stretch; }
-  .header-left { display:flex; justify-content:space-between; align-items:center; gap:8px; }
-  .header-center { order: 3; width: 100%; display:flex; justify-content:center; }
-  .search-box { display: none; }
-  .header-right { width:100%; display:flex; justify-content:flex-end; gap:8px; }
+      .mentor-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
 
-  .content-area { gap: 12px; }
-  .course-grid { grid-template-columns: 1fr; }
-  .mentor-grid { grid-template-columns: repeat(2, 1fr); }
-  .featured-grid { grid-template-columns: 1fr; }
+    @media (max-width: 992px) {
+      .header {
+        padding: 12px 20px;
+        height: auto;
+        gap: 12px;
+      }
 
-  .footer-grid { flex-direction: column; gap: 20px; }
-  .footer { padding: 24px; }
-}
+      .search-box input {
+        width: 300px;
+      }
 
-@media (max-width: 480px) {
-  .brand { font-size: 18px; }
-  .logo-img { height: 28px; }
-  .avatar { width: 28px; height: 28px; font-size: 12px; }
-  .page-container { padding: 12px; }
-  .course-card { padding: 12px; }
-  .mentor-card img, .featured-card img { height: 120px; }
-}
+      .course-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
 
-</style>
+      .featured-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .mentor-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .page-container {
+        padding: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .header-left {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .header-center {
+        order: 3;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .search-box {
+        display: none;
+      }
+
+      .header-right {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .content-area {
+        gap: 12px;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mentor-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand {
+        font-size: 18px;
+      }
+
+      .logo-img {
+        height: 28px;
+      }
+
+      .avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+      }
+
+      .page-container {
+        padding: 12px;
+      }
+
+      .course-card {
+        padding: 12px;
+      }
+
+      .mentor-card img,
+      .featured-card img {
+        height: 120px;
+      }
+    }
+
+    .course-card {
+      position: relative;
+      padding-bottom: 50px;
+      /* Space for button */
+    }
+
+    .add-cart-btn {
+      width: 90%;
+      margin: 0 5%;
+      padding: 8px;
+      background: #0b0f2b;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.2s;
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+    }
+
+    .course-card:hover .add-cart-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Header will be loaded from header.html -->
-<div id="header-placeholder"></div>
+  <!-- Header will be loaded from header.html -->
+  <div id="header-placeholder"></div>
 
-<script>
-  // Load header.html via fetch and inject into placeholder
-  fetch('header.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.text();
-    })
-    .then(html => {
-      document.getElementById('header-placeholder').innerHTML = html;
-    })
-    .catch(err => {
-      console.error('Failed to load header:', err);
-    });
-</script>
+  <script>
+    // Load header.html via fetch and inject into placeholder
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Failed to load header:', err);
+      });
+  </script>
 
-<main class="page-container">
+  <main class="page-container">
 
-  <section class="page-header">
-    <h2>Design Courses</h2>
-    <p>All Development Courses</p>
-  </section>
-
-  <div class="content-area">
-
-    <aside class="sidebar">
-      <div class="filter-box">
-        <h4>Rating</h4>
-        <ul class="filter-list">
-          <li><input type="checkbox"> ★★★★★</li>
-          <li><input type="checkbox"> ★★★★☆</li>
-          <li><input type="checkbox"> ★★★☆☆</li>
-        </ul>
-      </div>
-
-      <div class="filter-box">
-        <h4>Number of Chapters</h4>
-        <ul class="filter-list">
-          <li><input type="checkbox"> 0 - 10</li>
-          <li><input type="checkbox"> 10 - 15</li>
-          <li><input type="checkbox"> 15 - 20</li>
-        </ul>
-      </div>
-
-      <div class="filter-box">
-        <h4>Price</h4>
-        <ul class="filter-list">
-          <li><input type="checkbox"> Free</li>
-          <li><input type="checkbox"> $10 - $50</li>
-          <li><input type="checkbox"> $50+</li>
-        </ul>
-      </div>
-    </aside>
-
-    <section class="courses">
-
-      <div class="course-top">
-        <span>Sort by:</span>
-        <select>
-          <option>Relevance</option>
-          <option>Price</option>
-          <option>Rating</option>
-        </select>
-      </div>
-
-      <div class="course-grid">
-        <!-- Repeat Course Card -->
-        <div class="course-card">
-          <img src="../img/Rectangle 1080.png" class="course-thumb">
-          <h3>Beginner's Guide to Design</h3>
-          <div class="course-meta">
-            <span>⭐ 4.8</span>
-            <span>2,345 Students</span>
-          </div>
-          <div class="course-price">$149.9</div>
-        </div>
-
-        <div class="course-card">
-          <img src="../img/Rectangle 1080.png" class="course-thumb">
-          <h3>Beginner's Guide to Design</h3>
-          <div class="course-meta">
-            <span>⭐ 4.8</span>
-            <span>2,345 Students</span>
-          </div>
-          <div class="course-price">$149.9</div>
-        </div>
-
-        <div class="course-card">
-          <img src="../img/Rectangle 1080.png" class="course-thumb">
-          <h3>Beginner's Guide to Design</h3>
-          <div class="course-meta">
-            <span>⭐ 4.8</span>
-            <span>2,345 Students</span>
-          </div>
-          <div class="course-price">$149.9</div>
-        </div>
-
-        <div class="course-card">
-          <img src="../img/Rectangle 1080.png" class="course-thumb">
-          <h3>Beginner's Guide to Design</h3>
-          <div class="course-meta">
-            <span>⭐ 4.8</span>
-            <span>2,345 Students</span>
-          </div>
-          <div class="course-price">$149.9</div>
-        </div>
-
-        <div class="course-card">
-          <img src="../img/Rectangle 1080.png" class="course-thumb">
-          <h3>Beginner's Guide to Design</h3>
-          <div class="course-meta">
-            <span>⭐ 4.8</span>
-            <span>2,345 Students</span>
-          </div>
-          <div class="course-price">$149.9</div>
-        </div>
-
-        <div class="course-card">
-          <img src="../img/Rectangle 1080.png" class="course-thumb">
-          <h3>Beginner's Guide to Design</h3>
-          <div class="course-meta">
-            <span>⭐ 4.8</span>
-            <span>2,345 Students</span>
-          </div>
-          <div class="course-price">$149.9</div>
-        </div>
-
-        <div class="course-card">
-          <img src="../img/Rectangle 1080.png" class="course-thumb">
-          <h3>Beginner's Guide to Design</h3>
-          <div class="course-meta">
-            <span>⭐ 4.8</span>
-            <span>2,345 Students</span>
-          </div>
-          <div class="course-price">$149.9</div>
-        </div>
-
-        <div class="course-card">
-          <img src="../img/Rectangle 1080.png" class="course-thumb">
-          <h3>Beginner's Guide to Design</h3>
-          <div class="course-meta">
-            <span>⭐ 4.8</span>
-            <span>2,345 Students</span>
-          </div>
-          <div class="course-price">$149.9</div>
-        </div>
-
-        <div class="course-card">
-          <img src="../img/Rectangle 1080.png" class="course-thumb">
-          <h3>Beginner's Guide to Design</h3>
-          <div class="course-meta">
-            <span>⭐ 4.8</span>
-            <span>2,345 Students</span>
-          </div>
-          <div class="course-price">$149.9</div>
-        </div>
-
-      </div>
-
-      <div class="pagination">
-        <button>«</button>
-        <button class="active">1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>»</button>
-      </div>
-
+    <section class="page-header">
+      <h2>Design Courses</h2>
+      <p>All Development Courses</p>
     </section>
-  </div>
 
-  <section class="mentors-section">
-    <h3>Popular Mentors</h3>
+    <div class="content-area">
 
-    <div class="mentor-grid">
+      <aside class="sidebar">
+        <div class="filter-box">
+          <h4>Rating</h4>
+          <ul class="filter-list">
+            <li><label><input type="checkbox" value="5" class="filter-rating"> ★★★★★</label></li>
+            <li><label><input type="checkbox" value="4" class="filter-rating"> ★★★★☆</label></li>
+            <li><label><input type="checkbox" value="3" class="filter-rating"> ★★★☆☆</label></li>
+          </ul>
+        </div>
 
-      <div class="mentor-card">
-        <img src="../img/Rectangle 1136.png">
-        <h4>Ronald Richards</h4>
-        <p>UX/UI Designer</p>
-        <span>⭐ 4.9 • 2,500 Students</span>
-      </div>
+        <div class="filter-box">
+          <h4>Number of Chapters</h4>
+          <ul class="filter-list">
+            <li><label><input type="checkbox" value="10" class="filter-chapter"> 0 - 10</label></li>
+            <li><label><input type="checkbox" value="15" class="filter-chapter"> 10 - 15</label></li>
+            <li><label><input type="checkbox" value="20" class="filter-chapter"> 15 - 20</label></li>
+          </ul>
+        </div>
 
-      <div class="mentor-card">
-        <img src="../img/Rectangle 1136.png">
-        <h4>Ronald Richards</h4>
-        <p>UX/UI Designer</p>
-        <span>⭐ 4.9 • 2,500 Students</span>
-      </div>
+        <div class="filter-box">
+          <h4>Price</h4>
+          <ul class="filter-list">
+            <li><label><input type="checkbox" value="free" class="filter-price"> Free</label></li>
+            <li><label><input type="checkbox" value="low" class="filter-price"> $10 - $50</label></li>
+            <li><label><input type="checkbox" value="high" class="filter-price"> $50+</label></li>
+          </ul>
+        </div>
+      </aside>
 
-      <div class="mentor-card">
-        <img src="../img/Rectangle 1136.png">
-        <h4>Ronald Richards</h4>
-        <p>UX/UI Designer</p>
-        <span>⭐ 4.9 • 2,500 Students</span>
-      </div>
+      <section class="courses">
 
-      <div class="mentor-card">
-        <img src="../img/Rectangle 1136.png">
-        <h4>Ronald Richards</h4>
-        <p>UX/UI Designer</p>
-        <span>⭐ 4.9 • 2,500 Students</span>
-      </div>
+        <div class="course-top">
+          <span>Sort by:</span>
+          <select>
+            <option>Relevance</option>
+            <option>Price</option>
+            <option>Rating</option>
+          </select>
+        </div>
 
-      <div class="mentor-card">
-        <img src="../img/Rectangle 1136.png">
-        <h4>Ronald Richards</h4>
-        <p>UX/UI Designer</p>
-        <span>⭐ 4.9 • 2,500 Students</span>
-      </div>
+        <div class="course-grid" id="course-grid">
+          <!-- Card 1: 5 Star, High Price, >15 Chapters -->
+          <div class="course-card" data-rating="5" data-price="149.9" data-chapters="20">
+            <img src="../img/Rectangle 1080.png" class="course-thumb">
+            <h3>Advanced UI Design</h3>
+            <div class="course-meta">
+              <span>⭐ 5.0</span>
+              <span>20 Chapters</span>
+            </div>
+            <div class="course-price">$149.9</div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
 
+          <!-- Card 2: 4 Star, Low Price, <10 Chapters -->
+          <div class="course-card" data-rating="4" data-price="45.0" data-chapters="8">
+            <img src="../img/Rectangle 1080.png" class="course-thumb">
+            <h3>Sketch Basics</h3>
+            <div class="course-meta">
+              <span>⭐ 4.2</span>
+              <span>8 Chapters</span>
+            </div>
+            <div class="course-price">$45.00</div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+
+          <!-- Card 3: 5 Star, Free, 12 Chapters -->
+          <div class="course-card" data-rating="5" data-price="0" data-chapters="12">
+            <img src="../img/Rectangle 1080.png" class="course-thumb">
+            <h3>Free UX Intro</h3>
+            <div class="course-meta">
+              <span>⭐ 5.0</span>
+              <span>12 Chapters</span>
+            </div>
+            <div class="course-price">Free</div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+
+          <!-- Card 4: 3 Star, Low Price, 18 Chapters -->
+          <div class="course-card" data-rating="3" data-price="15.0" data-chapters="18">
+            <img src="../img/Rectangle 1080.png" class="course-thumb">
+            <h3>Prototyping</h3>
+            <div class="course-meta">
+              <span>⭐ 3.5</span>
+              <span>18 Chapters</span>
+            </div>
+            <div class="course-price">$15.00</div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+
+          <!-- Card 5: 4 Star, High Price, 25 Chapters -->
+          <div class="course-card" data-rating="4" data-price="99.0" data-chapters="25">
+            <img src="../img/Rectangle 1080.png" class="course-thumb">
+            <h3>Mastering Figma</h3>
+            <div class="course-meta">
+              <span>⭐ 4.8</span>
+              <span>25 Chapters</span>
+            </div>
+            <div class="course-price">$99.00</div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+
+          <!-- Card 6: 3 Star, Free, 5 Chapters -->
+          <div class="course-card" data-rating="3" data-price="0" data-chapters="5">
+            <img src="../img/Rectangle 1080.png" class="course-thumb">
+            <h3>Design Thinking</h3>
+            <div class="course-meta">
+              <span>⭐ 3.0</span>
+              <span>5 Chapters</span>
+            </div>
+            <div class="course-price">Free</div>
+            <button class="add-cart-btn">Add to Cart</button>
+          </div>
+
+        </div>
+
+        <div class="pagination">
+          <button>«</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>»</button>
+        </div>
+
+      </section>
     </div>
-  </section>
 
-  <section class="featured-courses">
-    <h3>Featured Courses</h3>
+    <section class="mentors-section">
+      <h3>Popular Mentors</h3>
 
-    <div class="featured-grid">
-      <div class="featured-card">
-        <img src="../img/Rectangle 1080.png">
-        <h4>Beginner's Guide to Design</h4>
-        <span>⭐ 4.9 • 3,300 Students</span>
-        <strong>$149.9</strong>
+      <div class="mentor-grid">
+
+        <div class="mentor-card">
+          <img src="../img/Rectangle 1136.png">
+          <h4>Ronald Richards</h4>
+          <p>UX/UI Designer</p>
+          <span>⭐ 4.9 • 2,500 Students</span>
+        </div>
+
+        <div class="mentor-card">
+          <img src="../img/Rectangle 1136.png">
+          <h4>Ronald Richards</h4>
+          <p>UX/UI Designer</p>
+          <span>⭐ 4.9 • 2,500 Students</span>
+        </div>
+
+        <div class="mentor-card">
+          <img src="../img/Rectangle 1136.png">
+          <h4>Ronald Richards</h4>
+          <p>UX/UI Designer</p>
+          <span>⭐ 4.9 • 2,500 Students</span>
+        </div>
+
+        <div class="mentor-card">
+          <img src="../img/Rectangle 1136.png">
+          <h4>Ronald Richards</h4>
+          <p>UX/UI Designer</p>
+          <span>⭐ 4.9 • 2,500 Students</span>
+        </div>
+
+        <div class="mentor-card">
+          <img src="../img/Rectangle 1136.png">
+          <h4>Ronald Richards</h4>
+          <p>UX/UI Designer</p>
+          <span>⭐ 4.9 • 2,500 Students</span>
+        </div>
+
       </div>
+    </section>
 
-      <div class="featured-card">
-        <img src="../img/Rectangle 1080.png">
-        <h4>Beginner's Guide to Design</h4>
-        <span>⭐ 4.9 • 3,300 Students</span>
-        <strong>$149.9</strong>
+    <section class="featured-courses">
+      <h3>Featured Courses</h3>
+
+      <div class="featured-grid">
+        <div class="featured-card">
+          <img src="../img/Rectangle 1080.png">
+          <h4>Beginner's Guide to Design</h4>
+          <span>⭐ 4.9 • 3,300 Students</span>
+          <strong>$149.9</strong>
+        </div>
+
+        <div class="featured-card">
+          <img src="../img/Rectangle 1080.png">
+          <h4>Beginner's Guide to Design</h4>
+          <span>⭐ 4.9 • 3,300 Students</span>
+          <strong>$149.9</strong>
+        </div>
+
+        <div class="featured-card">
+          <img src="../img/Rectangle 1080.png">
+          <h4>Beginner's Guide to Design</h4>
+          <span>⭐ 4.9 • 3,300 Students</span>
+          <strong>$149.9</strong>
+        </div>
+
+        <div class="featured-card">
+          <img src="../img/Rectangle 1080.png">
+          <h4>Beginner's Guide to Design</h4>
+          <span>⭐ 4.9 • 3,300 Students</span>
+          <strong>$149.9</strong>
+        </div>
       </div>
+    </section>
 
-      <div class="featured-card">
-        <img src="../img/Rectangle 1080.png">
-        <h4>Beginner's Guide to Design</h4>
-        <span>⭐ 4.9 • 3,300 Students</span>
-        <strong>$149.9</strong>
-      </div>
+  </main>
 
-      <div class="featured-card">
-        <img src="../img/Rectangle 1080.png">
-        <h4>Beginner's Guide to Design</h4>
-        <span>⭐ 4.9 • 3,300 Students</span>
-        <strong>$149.9</strong>
-      </div>
-    </div>
-  </section>
+  <!-- Footer will be loaded from footer.html -->
+  <div id="footer-placeholder"></div>
 
-</main>
+  <script>
+    // Load footer.html via fetch and inject into placeholder
+    fetch('footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Failed to load footer:', err);
+      });
+  </script>
 
-<!-- Footer will be loaded from footer.html -->
-<div id="footer-placeholder"></div>
+  <script>
+    // Filter Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.course-card');
+      const filters = {
+        rating: [],
+        price: [],
+        chapter: [],
+        search: ''
+      };
 
-<script>
-  // Load footer.html via fetch and inject into placeholder
-  fetch('footer.html')
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not ok');
-      return response.text();
-    })
-    .then(html => {
-      document.getElementById('footer-placeholder').innerHTML = html;
-    })
-    .catch(err => {
-      console.error('Failed to load footer:', err);
+      // Check URL for search param
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchParam = urlParams.get('search');
+      if (searchParam) {
+        filters.search = searchParam.toLowerCase();
+        // Optional: fill search box if present (it's in header.html which loads async)
+        // Since header loads async, we might need a timeout or observer, but for now logic is enough.
+        // Actually, let's try to set it after a small delay or use event delegation if meaningful.
+        setTimeout(() => {
+          const searchInput = document.getElementById('global-search-input');
+          if (searchInput) searchInput.value = searchParam;
+        }, 500);
+      }
+
+      function updateFilters() {
+        // Get Checked Values
+        filters.rating = Array.from(document.querySelectorAll('.filter-rating:checked')).map(cb => cb.value);
+        filters.price = Array.from(document.querySelectorAll('.filter-price:checked')).map(cb => cb.value);
+        filters.chapter = Array.from(document.querySelectorAll('.filter-chapter:checked')).map(cb => cb.value);
+        // Search is kept from URL or if we added a search event listener on this page too.
+        // But currently search redirects to home?search=... so it reloads page.
+
+        applyFilters();
+      }
+
+      function applyFilters() {
+        cards.forEach(card => {
+          const rating = card.dataset.rating; // "5", "4"
+          const price = parseFloat(card.dataset.price);
+          const chapters = parseInt(card.dataset.chapters);
+          const title = card.querySelector('h3').textContent.toLowerCase();
+
+          let show = true;
+
+          // Search Filter
+          if (filters.search && !title.includes(filters.search)) {
+            show = false;
+          }
+
+          // Rating Filter (Exact match or >= value logic? Let's do exact based on UI)
+          if (show && filters.rating.length > 0) {
+            if (!filters.rating.includes(rating)) show = false;
+          }
+
+          // Price Filter
+          if (show && filters.price.length > 0) {
+            let priceMatch = false;
+            filters.price.forEach(p => {
+              if (p === 'free' && price === 0) priceMatch = true;
+              if (p === 'low' && price >= 10 && price <= 50) priceMatch = true;
+              if (p === 'high' && price > 50) priceMatch = true;
+            });
+            if (!priceMatch) show = false;
+          }
+
+          // Chapter Filter
+          if (show && filters.chapter.length > 0) {
+            let chapMatch = false;
+            filters.chapter.forEach(c => {
+              if (c === '10' && chapters <= 10) chapMatch = true;
+              if (c === '15' && chapters > 10 && chapters <= 15) chapMatch = true;
+              if (c === '20' && chapters > 15 && chapters <= 20) chapMatch = true;
+              // Handle 20+ if necessary, my mock data has 25
+              if (c === '20' && chapters > 15) chapMatch = true; // loosen logic for 25
+            });
+            if (!chapMatch) show = false;
+          }
+
+          card.style.display = show ? 'block' : 'none';
+        });
+      }
+
+      // Add Listeners
+      document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+        cb.addEventListener('change', updateFilters);
+      });
+
+      // Add to Cart Logic
+      const btns = document.querySelectorAll('.add-cart-btn');
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const card = e.target.closest('.course-card');
+          const title = card.querySelector('h3').textContent;
+          // Handle "Free" parse
+          let priceText = card.querySelector('.course-price').textContent; // "$149.9" or "Free"
+          let price = 0;
+          if (priceText.toLowerCase() !== 'free') {
+            price = parseFloat(priceText.replace('$', ''));
+          }
+
+          const image = card.querySelector('img').src;
+
+          const product = {
+            title: title,
+            price: price,
+            image: image,
+            id: Date.now() // Simple unique ID
+          };
+
+          // Add to LocalStorage
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cart.push(product);
+          localStorage.setItem('cart', JSON.stringify(cart));
+
+          // Toast or Alert
+          alert('Added "' + title + '" to cart!');
+        });
+      });
     });
-</script>
+  </script>
 
 </body>
+
 </html>
