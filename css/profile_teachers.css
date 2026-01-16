@@ -1,0 +1,111 @@
+@import url("./header-h.css");
+@import url("./footer-h.css");
+@import url("./profile_sidebar.css");
+@import url("./profile_toolbar.css");
+@import url("./profile_pagination.css");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* main */
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+
+    padding: 40px 60px 78px 60px;
+    font-family: "Inter";
+    /* border: 1px solid red; */
+}
+
+/* Sidebar */
+.sidebar-container .bottom-container ul .teachers {
+    border: none;
+    background-color: #0F172A;
+    color: white;
+}
+
+/* Content */
+.content-container {
+    width: 920px;
+    height: auto;
+    /* border: 1px solid pink; */
+}
+
+/* Card container */
+.card-container {
+    width: 896px;
+    margin-top: 15px;
+    /* border: 1px solid pink; */
+}
+
+/* Grid cards */
+.card-container .grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(212px, 212px)); /*1fr 1fr 1fr 1fr;*/
+    grid-template-rows: auto auto;
+    gap: 16px;
+
+    width: 896px;
+    height: 617px;
+    /* border: 1px solid yellow; */
+}
+
+/* Card */
+.card-container .grid-cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 212px;
+    height: 301px;
+    padding: 16px;
+
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.card-container .grid-cards .card .picture {
+    text-align: center;
+    border-bottom: 1px solid #E2E8F0;
+    height: 210px;
+
+    h3 {
+        margin-top: 12px;
+        font-size: 18px;
+        font-weight: semiBold;
+        color: #0F172A;
+    }
+
+    p {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #334155;
+    }
+}
+
+.card-container .grid-cards .card button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 179px;
+    height: 40px;
+    padding: 10px 24px;
+
+    border-radius: 8px;
+    border: none;
+    background-color: #2563EB;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+}
+

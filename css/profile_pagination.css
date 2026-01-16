@@ -1,0 +1,71 @@
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* max-width: 211px; */
+    width: fit-content;
+    height: 41px;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 0px solid transparent;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pagination button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 43px;
+    height: 41px;
+
+    /* box-shadow: inset 0 0 0 1px #E2E8F0;
+    border: none; */
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-left: 0px solid #E2E8F0;
+    background-color: white;
+    font-size: 12px;
+    font-weight: semiBold;
+    color: #0F172A;
+    cursor: pointer;
+
+    img {
+        width: 3.75px;
+        height: 7.5px;
+    }
+}
+
+.pagination button:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: inset 0 0 0 1px #E2E8F0;
+    border: none;
+}
+
+.pagination button:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: inset 0 0 0 1px #E2E8F0;
+    border: none;
+}
+
+.pagination button:nth-last-child(2) {
+    border-right: 0px solid #E2E8F0;
+}
+
+.page-button.active {
+    background-color: #1E293B;
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

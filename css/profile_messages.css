@@ -1,0 +1,166 @@
+@import url("./header-h.css");
+@import url("./footer-h.css");
+@import url("./profile_sidebar.css");
+@import url("./profile_toolbar.css");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* main */
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+
+    padding: 40px 60px 78px 60px;
+    font-family: "Inter";
+    /* border: 1px solid red; */
+}
+
+.sidebar-container .bottom-container ul .messages {
+    border: none;
+    background-color: #0F172A;
+    color: white;
+}
+
+
+/* Content */
+.content-container {
+    width: 920px;
+    height: auto;
+    /* border: 1px solid pink; */
+}
+
+
+
+/* Card container */
+.card-container {
+    width: 950px;
+    margin-top: 15px;
+    /* border: 1px solid pink; */
+}
+
+/* Flex cards */
+.card-container .flex-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+
+    height: auto;/*975px;*/
+    /* border: 1px solid yellow; */
+}
+
+.chat-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.flex-cards .card {
+    height: 114px;
+    padding: 16px;
+
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.flex-cards .card .header,
+.flex-cards .card .header .teacher{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 40px;
+}
+
+.flex-cards .card .header .teacher{
+    justify-content: flex-start;
+    gap: 8px;
+    height: 40px;
+}
+
+.flex-cards .card .header .time p {
+    font-size: 14px;
+    color: #334155;
+}
+
+.flex-cards .card .chat {
+    margin-top: 16px;
+
+    p {
+        font-size: 16px;
+        color: #0F172A;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+
+/* Pagination */
+.card-container .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 211px;
+    height: 41px;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid pink; */
+    display: none;
+}
+
+.card-container .pagination button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 43px;
+    height: 41px;
+
+    /* box-shadow: inset 0 0 0 1px #E2E8F0;
+    border: none; */
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
+    border-left: 0px solid #E2E8F0;
+    background-color: white;
+    font-size: 12px;
+    font-weight: semiBold;
+    color: #0F172A;
+    cursor: pointer;
+
+    img {
+        width: 3.75px;
+        height: 7.5px;
+    }
+}
+
+.card-container .pagination button:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    box-shadow: inset 0 0 0 1px #E2E8F0;
+    border: none;
+}
+
+.card-container .pagination button:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: inset 0 0 0 1px #E2E8F0;
+    border: none;
+}
+
+.card-container .pagination button:nth-last-child(2) {
+    border-right: 0px solid #E2E8F0;
+}

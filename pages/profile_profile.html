@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/profile_profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main -->
+    <main>
+        <!-- Sidebar -->
+        <div id="profile-sidebar-placeholder"></div>
+
+        <!-- Content -->
+        <div class="content-container">
+            <!-- Profile information -->
+            <div class="profile-infor">
+                <!-- Name -->
+                <div class="name-box">
+                    <!-- First name -->
+                    <div class="first-name">
+                        <span>First Name</span>
+                        <input type="text" id="firstName" placeholder="First name">
+                    </div>
+
+                    <!-- Last name -->
+                    <div class="last-name">
+                        <span>Last Name</span>
+                        <input type="text" id="lastName" placeholder="Last name">
+                    </div>
+                </div>
+
+                <!-- Headline -->
+                <div class="headline-box">
+                    <div class="headline">
+                        <span>Headline</span>
+                        <input type="text" id="headline-input"placeholder="Headline">
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="description-box">
+                    <div class="description">
+                        <span>Description</span>
+                        <textarea id="description-input" placeholder="Description"></textarea>
+                    </div>
+                </div>
+
+                <!-- Language -->
+                <div class="language-box">
+                    <div class="language">
+                        <span>Language</span>
+                        <div class="language-input">
+                            <input type="text" placeholder="Language">
+                        <select>
+                            <!-- <option value="" selected disabled hidden></option> -->
+                            <option value="Vietnamese">Vietnamese</option>
+                            <option value="English">English</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile image -->
+            <div class="profile-image">
+                <!-- Preview container -->
+                <div class="image-preview-container">
+                    <h3>Image Preview</h3>
+                    <div class="image-box">
+                        <img src="../assets/images/placeholder-image.png" alt="user profile picture">
+                    </div>
+                </div>
+
+                <!-- Upload image -->
+                <div class="image-upload-container">
+                    <h3>Add/Change Image</h3>
+
+                    <!-- Upload image path -->
+                    <div class="upload-box">
+                        <!-- <input type="file" accept="image/*"> -->
+                        <input type="text" placeholder="Image path">
+                        <button>Upload Image</button>
+                    </div>
+
+                    <!-- Save image button -->
+                    <button class="upload-image">Save Image</button>
+                </div>
+            </div>
+
+            <!-- Profile links -->
+            <div class="profile-links">
+                <h3>Links</h3>
+                <!-- Website -->
+                 <div class="link-box">
+                    <span>Website</span>
+                    <input type="text" id="website-input" placeholder="Website URL">
+                 </div>
+
+                 <!-- X (twitter) -->
+                 <div class="link-box">
+                    <span>X (Formerly twitter)</span>
+                    <input type="text" id="x-input" placeholder="X URL">
+                 </div>
+
+                 <!-- LinkedIn -->
+                 <div class="link-box">
+                    <span>LinkedIn</span>
+                    <input type="text" id="linkedin-input" placeholder="LinkedIn URL">
+                 </div>
+
+                 <!-- Youtube -->
+                 <div class="link-box">
+                    <span>Youtube</span>
+                    <input type="text" id="youtube-input" placeholder="Youtube URL">
+                 </div>
+
+                 <!-- Facebook -->
+                 <div class="link-box">
+                    <span>Facebook</span>
+                    <input type="text" id="facebook-input" placeholder="Facebook URL">
+                 </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- JS scripts -->
+    <script src="../js/main-h.js"></script>
+    <script src="../js/profile_profile.js"></script>
+</body>
+</html>
