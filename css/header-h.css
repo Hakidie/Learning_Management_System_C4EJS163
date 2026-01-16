@@ -1,0 +1,111 @@
+/* Header */
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 60px;
+    height: 65px;
+    gap: 20px;
+
+    border-bottom: 1px solid #e2e8f0;
+    text-decoration: none;
+    font-family: "Inter";
+}
+
+header a {
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.byway-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-container,
+.profile-container,
+.searchbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 40px;
+}
+
+.logo-container {
+    width: 83px;
+}
+
+.logo-container h1 {
+    font-size: 16px;
+    font-weight: medium;
+    color: #334155;
+}
+
+.profile-container {
+    width: 206px;
+    margin-left: auto;
+    gap: 24px;
+    white-space: nowrap;
+}
+
+.profile-container .favorite,
+.profile-container .cart,
+.profile-container .notification {
+    width: 24px;
+    height: 24px;
+}
+
+.profile-container .my-courses-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.profile-container .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 100%;
+    background-color: #334155;
+    font-size: 16px;
+    font-weight: medium;
+    color: white;
+}
+
+.categories-container a,
+.teach-container a {
+    color: #334155;
+}
+
+.searchbar-container {
+    justify-content: flex-start;
+    gap: 10px;
+
+    width: 622px;
+    padding: 10px;
+
+    border-radius: 8px;
+    /* border: 1.25px solid #334155; */
+    box-shadow: inset 0 0 0 1px #334155;
+}
+
+.searchbar-container .search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.searchbar-container input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.searchbar-container input::placeholder {
+    color: #334155;
+}

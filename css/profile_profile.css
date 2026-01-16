@@ -1,0 +1,265 @@
+@import url("./header-h.css");
+@import url("./footer-h.css");
+@import url("./profile_sidebar.css");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* main */
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+
+    padding: 40px 60px 78px 60px;
+    font-family: "Inter";
+    /* border: 1px solid red; */
+}
+
+/* Sidebar */
+.sidebar-container .bottom-container ul .profile {
+    border: none;
+    background-color: #0F172A;
+    color: white;
+}
+
+/* Content */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid pink; */
+}
+
+
+.profile-infor,
+.profile-image,
+.profile-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+
+    width: 100%;
+    height: auto;
+    padding: 24px;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+}
+
+/* Profile Infor */
+.name-box,
+.headline-box,
+.description-box,
+.language-box,
+.language-input {
+    display: flex;
+    justify-content: space-between;
+    gap: 62px;
+    /* border: 1px solid pink; */
+}
+
+.first-name,
+.last-name,
+.headline,
+.description,
+.language {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 6px;
+
+    width: 100%;
+    /* border: 1px solid red; */
+
+    span {
+        font-size: 14px;
+        color: #0F172A;
+    }
+
+    input {
+        width: 100%;
+        height: 58px;
+        padding: 16px;
+
+        border: 1px solid #E2E8F0;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #0F172A;
+        outline: none;
+    }
+}
+
+.headline {
+    width: calc((100% - 62px) / 2);
+}
+
+.description textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 16px;
+
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    font-family: "Inter";
+    font-size: 16px;
+    color: #0F172A;
+    outline: none;
+    resize: none;
+}
+
+.language {
+    width: calc((100% - 62px) / 2);
+}
+
+.language-input {
+    align-items: center;
+    width: 100%;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+
+    input {
+        width: 100%;
+        height: 58px;
+        padding: 16px;
+
+        border: none;
+        font-size: 16px;
+        color: #0F172A;
+        outline: none;
+    }
+
+    select {
+        width: 24px;
+        height: 24px;
+        margin-right: 17px;
+
+        border: none;
+        background-color: transparent;
+        background-image: url('../assets/icons/down-chevron.png');
+        background-position: center;
+        color: transparent;
+        cursor: pointer;
+    }
+}
+
+/* Profile image */
+.profile-image {
+    gap: 46px;
+}
+
+.image-preview-container,
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 6px;
+
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0F172A;
+    }
+}
+
+.image-preview-container .image-box {
+    max-width: 425px;
+    min-height: 255px;
+    padding: 16px;
+
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+}
+
+.image-upload-container .upload-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+    height: 58px;
+
+    input {
+        width: 55%;
+        height: 58px;
+        padding: 16px;
+
+        border: 1px solid #E2E8F0;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #0F172A;
+        outline: none;
+    }
+
+    button {
+        width: 141px;
+        height: 58px;
+        padding: 10px 24px;
+
+        border: 1px solid #0F172A;
+        border-radius: 8px;
+        background-color: transparent;
+        font-size: 14px;
+        font-weight: 500;
+        color: #0F172A;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+}
+
+.image-upload-container .upload-image {
+    width: 126px;
+    height: 48px;
+    margin-top: 10px;
+    padding: 10px 24px;
+
+    border: none;
+    border-radius: 8px;
+    background-color: #0F172A;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Profile links */
+.profile-links h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.profile-links .link-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 9px;
+    width: 100%;
+
+    span {
+        font-size: 14px;
+        color: #0F172A;
+    }
+
+    input {
+        width: 100%;
+        height: 58px;
+        padding: 16px;
+
+        border: 1px solid #E2E8F0;
+        border-radius: 8px;
+        font-size: 16px;
+        color: #0F172A;
+        outline: none;
+    }
+}

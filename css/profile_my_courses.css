@@ -1,0 +1,116 @@
+@import url("./header-h.css");
+@import url("./footer-h.css");
+@import url("./profile_sidebar.css");
+@import url("./profile_toolbar.css");
+@import url("./profile_pagination.css");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* main */
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+
+    padding: 40px 60px 78px 60px;
+    font-family: "Inter";
+    /* border: 1px solid red; */
+}
+
+.sidebar-container .bottom-container ul .my-courses {
+    border: none;
+    background-color: #0F172A;
+    color: white;
+}
+
+/* Content */
+.content-container {
+    width: 920px;
+    height: auto;
+    /* border: 1px solid pink; */
+}
+
+
+
+/* Card container */
+.card-container {
+    width: 942px;
+    margin-top: 15px;
+    /* border: 1px solid pink; */
+}
+
+/* Grid cards */
+.card-container .grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(298px, 298px));
+    /*grid-template-columns: repeat(auto-fill, minmax(298px, 1fr));*/ /*1fr 1fr 1fr 1fr;*/
+    gap: 20px;
+
+    /* width: 896px; */
+    height: auto;/*975px;*/
+    /* border: 1px solid yellow; */
+}
+
+/* Card */
+.card-container .grid-cards .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    width: 298px;
+    height: 282px;
+    padding: 16px;
+
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.card-container .grid-cards .card.hidden {
+    display: none !important;
+}
+
+.card-container .grid-cards .card h3 {
+    font-size: 18px;
+    font-weight: semiBold;
+    color: #0F172A;
+}
+
+.card-container .grid-cards .card p {
+    font-size: 14px;
+    color: #334155;
+}
+
+.card-container .grid-cards .card .progress-bar,
+.card-container .grid-cards .card .progress-bar .progress {
+    width: 263px;
+    height: 3px;
+    border-radius: 60px;
+    background-color: #E0F2FE;
+}
+
+.card-container .grid-cards .card .progress-bar .progress {
+    width: 96px;
+    background-color: #2563EB;
+}
+
+.card-container .grid-cards .card .rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-container .grid-cards .card .rating p {
+        font-size: 12px;
+        font-weight: Bold;
+        color: #334155;
+}
+
