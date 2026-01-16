@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/profile_messages_chat.css">
+    <title>Pyway/Profile/MyReviews</title>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div id="profile-sidebar-placeholder"></div>
+
+        <div class="content-container">
+            <div class="toolbar-container">
+                <div class="title">
+                    <h2>Messages</h2>
+                </div>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-header">
+                    <a href="./profile_messages.html"><img src="../assets/icons/back-arrow.png" alt="back to messages"></a>
+
+                    <div class="teacher">
+                        <img src="../assets/images/teacher-avatar-message.png" alt="teacher avatar" id="teacher-img">
+                        <h3 id="teacher-name">Instructor name</h3>
+                    </div>
+
+                    <div class="chat-button">
+                        <button><img src="../assets/icons/dots.png" alt="hamburger menu"></button>
+                    </div>
+                </div>
+
+                <div class="chat" id="chat-box"></div>
+
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Type your Message">
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/main-h.js"></script>
+    <script src="../js/message-chat.js"></script>
+</body>
+</html>
