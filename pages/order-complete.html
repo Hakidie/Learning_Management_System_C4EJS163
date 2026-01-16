@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Complete</title>
+  <link rel="stylesheet" href="order-complete.css">
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+  }
+
+  body {
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* ensure header on top and footer at bottom */
+    margin: 0;
+  }
+
+  /* Ensure header/footer placeholders are full-bleed */
+  #header-placeholder,
+  #footer-placeholder {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .success-container {
+    flex: 1;
+    /* take remaining space between header and footer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    /* page gutter */
+  }
+
+  .success-inner {
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .success-icon {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0b0f2b;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #0b0f2bd7;
+  }
+</style>
+
+<body>
+
+  <!-- Header will be loaded from header.html -->
+  <div id="header-placeholder"></div>
+
+  <script>
+    // Load header.html via fetch and inject into placeholder
+    fetch('header.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Failed to load header:', err);
+      });
+  </script>
+
+  <main class="success-container">
+    <div class="success-inner">
+      <div class="success-icon">
+        <svg width="70" height="70" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="12" fill="#1DB954" />
+          <path d="M7 12.5L10.5 16L17 9" stroke="white" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+
+      <h1>Order Complete</h1>
+      <p>You Will Receive a confirmation email soon!</p>
+      <button id="continue-shopping"
+        style="margin-top: 20px; padding: 12px 24px; background: #0b0f2b; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">Continue
+        Shopping</button>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('continue-shopping').addEventListener('click', function () {
+      window.location.href = 'home.html';
+    });
+  </script>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Load footer.html via fetch and inject into placeholder
+    fetch('footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Failed to load footer:', err);
+      });
+  </script>
+</body>
+
+</html>
