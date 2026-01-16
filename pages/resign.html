@@ -1,405 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Create Your Account</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Your Account</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-body {
-  background: #fff;
-  min-height: 100vh;
-  overflow: auto;
-} 
+    body {
+      background: #fff;
+      min-height: 100vh;
+      overflow: auto;
+    }
 
-.header {
-  height: 65px;
-  padding: 0 32px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #e5e7eb;
-  background: #fff;
-}
+    .header {
+      height: 65px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e5e7eb;
+      background: #fff;
+    }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
 
-.logo-img {
-  height: 32px;
-}
+    .logo-img {
+      height: 32px;
+    }
 
-.brand {
-  font-size: 20px;
-  font-weight: 700;
-}
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+    }
 
-.nav-link {
-  text-decoration: none;
-  color: #2563eb;
-  font-size: 14px;
-  font-weight: 500;
-}
+    .nav-link {
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-.search-box {
-  position: relative;
-}
+    .search-box {
+      position: relative;
+    }
 
-.search-box input {
-  width: 420px;
-  height: 40px;
-  padding: 0 14px 0 42px;
-  border-radius: 10px;
-  border: 1px solid #cbd5e1;
-  font-size: 14px;
-}
+    .search-box input {
+      width: 420px;
+      height: 40px;
+      padding: 0 14px 0 42px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      font-size: 14px;
+    }
 
-.search-icon {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-}
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+    }
 
-/* RIGHT */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+    /* RIGHT */
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-/* CART */
-.cart-icon {
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-}
+    /* CART */
+    .cart-icon {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+    }
 
-/* BUTTONS */
-.btn-login {
-  display: inline-block;
-  height: 38px;
-  padding: 0 22px;
-  border-radius: 10px;
-  border: 2px solid #2a0b2f;
-  background: #fff;
-  color: #2a0b2f;
-  font-weight: 600;
-  font-size: 15px;
-  text-align: center;
-  line-height: 38px;
-  box-shadow: 0 2px 8px rgba(44, 0, 60, 0.08);
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s, box-shadow 0.3s, color 0.2s, border 0.2s;
-}
-.btn-login:hover {
-  background: linear-gradient(90deg, #f3eaff, #2a0b2f);
-  color: #160018;
-  border-color: #fff;
-  box-shadow: 0 4px 16px rgba(44, 0, 60, 0.15);
-  text-decoration: underline;
-}
+    /* BUTTONS */
+    .btn-login {
+      display: inline-block;
+      height: 38px;
+      padding: 0 22px;
+      border-radius: 10px;
+      border: 2px solid #2a0b2f;
+      background: #fff;
+      color: #2a0b2f;
+      font-weight: 600;
+      font-size: 15px;
+      text-align: center;
+      line-height: 38px;
+      box-shadow: 0 2px 8px rgba(44, 0, 60, 0.08);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s, box-shadow 0.3s, color 0.2s, border 0.2s;
+    }
 
-.btn-signup {
-  display: inline-block;
-  height: 38px;
-  padding: 0 24px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(90deg, #160018, #2a0b2f);
-  color: #fff;
-  font-weight: 600;
-  font-size: 15px;
-  text-align: center;
-  line-height: 38px;
-  box-shadow: 0 2px 8px rgba(44, 0, 60, 0.12);
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s, box-shadow 0.3s, color 0.2s;
-}
-.btn-signup:hover {
-  background: linear-gradient(90deg, #2a0b2f, #fff);
-  color: #160018;
-  box-shadow: 0 4px 16px rgba(44, 0, 60, 0.18);
-  text-decoration: underline;
-}
+    .btn-login:hover {
+      background: linear-gradient(90deg, #f3eaff, #2a0b2f);
+      color: #160018;
+      border-color: #fff;
+      box-shadow: 0 4px 16px rgba(44, 0, 60, 0.15);
+      text-decoration: underline;
+    }
+
+    .btn-signup {
+      display: inline-block;
+      height: 38px;
+      padding: 0 24px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(90deg, #160018, #2a0b2f);
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+      text-align: center;
+      line-height: 38px;
+      box-shadow: 0 2px 8px rgba(44, 0, 60, 0.12);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s, box-shadow 0.3s, color 0.2s;
+    }
+
+    .btn-signup:hover {
+      background: linear-gradient(90deg, #2a0b2f, #fff);
+      color: #160018;
+      box-shadow: 0 4px 16px rgba(44, 0, 60, 0.18);
+      text-decoration: underline;
+    }
 
 
 
-.container {
-  display: flex;
-  height: calc(100vh - 70px);
-}
+    .container {
+      display: flex;
+      height: calc(100vh - 70px);
+    }
 
-.image-box {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-}
+    .image-box {
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
 
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-position: center;
-}
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-position: center;
+    }
 
-.form-box {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .form-box {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.form-inner {
-  width: 520px;
-}
+    .form-inner {
+      width: 520px;
+    }
 
-.form-inner h2 {
-  font-size: 26px;
-  margin-bottom: 30px;
-}
+    .form-inner h2 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
 
-.form-group {
-  margin-bottom: 16px;
-}
+    .form-group {
+      margin-bottom: 16px;
+    }
 
-.form-group label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 6px;
-  font-weight: 600;
-}
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
 
-.form-group input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid #e3e3e3;
-}
+    .form-group input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid #e3e3e3;
+    }
 
-.row {
-  display: flex;
-  gap: 20px;
-}
+    .row {
+      display: flex;
+      gap: 20px;
+    }
 
-.btn-create {
-  margin-top: 10px;
-  padding: 14px;
-  width: 220px;
-  background: linear-gradient(90deg, #160018, #2a0b2f);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 15px;
-}
+    .btn-create {
+      margin-top: 10px;
+      padding: 14px;
+      width: 220px;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      background: linear-gradient(90deg, #160018, #2a0b2f);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+      box-shadow: 0 2px 8px rgba(44, 0, 60, 0.12);
+      line-height: 1;
+    }
 
-/* DIVIDER */
-.divider {
-  margin: 26px 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #999;
-  font-size: 14px;
-}
+    .btn-create:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(44, 0, 60, 0.16);
+      opacity: 0.98;
+    }
 
-.divider::before,
-.divider::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #e3e3e3;
-}
+    .btn-create:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.18);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
 
-/* SOCIAL BUTTONS */
-.social {
-  display: flex;
-  gap: 20px;
-}
+    .btn-create[disabled] {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
 
-.social-btn {
-  flex: 1;
-  height: 44px;
-  border-radius: 10px;
-  border: 1px solid #e3e3e3;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-}
+    .form-message {
+      margin-top: 10px;
+      color: #d63333;
+      min-height: 20px;
+      font-size: 14px;
+    }
 
-/* ICON */
-.social-btn img {
-  width: 18px;
-  height: 18px;
-}
+    /* DIVIDER */
+    .divider {
+      margin: 26px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #999;
+      font-size: 14px;
+    }
 
-/* OPTIONAL HOVER */
-.social-btn:hover {
-  background: #f9fafb;
-  border-color: #cbd5e1;
-}
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #e3e3e3;
+    }
 
-@media (max-width: 992px) {
-  .search-box input { width: 240px; }
-  .form-inner { width: 420px; }
-}
+    /* SOCIAL BUTTONS */
+    .social {
+      display: flex;
+      gap: 20px;
+    }
 
-@media (max-width: 768px) {
-  .header {
-    padding: 12px 16px;
-    flex-direction: column;
-    align-items: stretch;
-    height: auto;
-    gap: 12px;
-  }
-  .header-left {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    width: 100%;
-  }
-  .search-box { display: none; }
-  .header-right { width: 100%; display:flex; justify-content: flex-end; gap:8px; }
+    .social-btn {
+      flex: 1;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid #e3e3e3;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-  .container { flex-direction: column; height: auto; }
-  .image-box, .form-box { width: 100%; }
-  .form-inner { width: 100%; padding: 20px; }
-  .image-box { height: 260px; }
-  .image-box img { height: 100%; object-fit: cover; }
+    /* ICON */
+    .social-btn img {
+      width: 18px;
+      height: 18px;
+    }
 
-  .social { flex-direction: column; }
-  .social-btn { width: 100%; }
-  .btn-create { width: 100%; }
-}
+    /* OPTIONAL HOVER */
+    .social-btn:hover {
+      background: #f9fafb;
+      border-color: #cbd5e1;
+    }
 
-@media (max-width: 480px) {
-  .brand { font-size: 18px; }
-  .logo-img { height: 28px; }
-  .btn-create { padding: 12px; }
-  .social-btn { padding: 12px; }
-}
+    @media (max-width: 992px) {
+      .search-box input {
+        width: 240px;
+      }
 
-</style>
+      .form-inner {
+        width: 420px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        gap: 12px;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .search-box {
+        display: none;
+      }
+
+      .header-right {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .container {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .image-box,
+      .form-box {
+        width: 100%;
+      }
+
+      .form-inner {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .image-box {
+        height: 260px;
+      }
+
+      .image-box img {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .social {
+        flex-direction: column;
+      }
+
+      .social-btn {
+        width: 100%;
+      }
+
+      .btn-create {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand {
+        font-size: 18px;
+      }
+
+      .logo-img {
+        height: 28px;
+      }
+
+      .btn-create {
+        padding: 12px;
+      }
+
+      .social-btn {
+        padding: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-  <!-- LEFT -->
-  <div class="header-left">
-    <img src="../img/logo.png" class="logo-img" alt="Byway">
-    <span class="brand">Byway</span>
+  <header class="header">
+    <!-- LEFT -->
+    <div class="header-left">
+      <a href="home.html" style="text-decoration:none; display:flex; align-items:center; gap:8px; color:inherit;">
+        <img src="../img/logo.png" class="logo-img" alt="Byway">
+        <span class="brand">Byway</span>
+      </a>
 
-    <a href="#" class="nav-link">Categories</a>
+      <a href="#" class="nav-link">Categories</a>
 
-    <div class="search-box">
-      <img src="../img/search.png" class="search-icon" alt="search">
-      <input type="text" placeholder="Search courses">
+      <div class="search-box">
+        <img src="../img/search.png" class="search-icon" alt="search">
+        <input type="text" id="resign-search-input" placeholder="Search courses">
+      </div>
+      <script>
+        document.getElementById('resign-search-input').addEventListener('keypress', function (e) {
+          if (e.key === 'Enter') {
+            const val = this.value.trim();
+            if (val) window.location.href = 'home.html?search=' + encodeURIComponent(val);
+          }
+        });
+      </script>
     </div>
-  </div>
 
-  <!-- RIGHT -->
-  <div class="header-right">
-    <a href="#" class="nav-link">Teach on Byway</a>
+    <!-- RIGHT -->
+    <div class="header-right">
+      <a href="#" class="nav-link">Teach on Byway</a>
 
-    <!-- Cart icon -->
-    <img src="../img/icon.png" class="cart-icon" alt="cart">
+      <!-- Cart icon -->
+      <a href="cart.html"><img src="../img/icon.png" class="cart-icon" alt="cart"></a>
 
-    <a class="btn-login" href="login.html">Login Up</a>
-    <a class="btn-signup" href="resign.html">Sign Up</a>
-  </div>
-</header>
-
-<main class="container">
-  <div class="image-box">
-    <img src="../img/baneresign.png" alt="Learning">
-  </div>
-
-  <!-- RIGHT FORM -->
-  <div class="form-box">
-    <div class="form-inner">
-      <h2>Create Your Account</h2>
-
-      <form>
-        <div class="row">
-          <div class="form-group">
-            <label>Full Name</label>
-            <input type="text" placeholder="First Name">
-          </div>
-          <div class="form-group">
-            <label>&nbsp;</label>
-            <input type="text" placeholder="Last Name">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Username</label>
-          <input type="text" placeholder="Username">
-        </div>
-
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="Email ID">
-        </div>
-
-        <div class="row">
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" placeholder="Enter Password">
-          </div>
-          <div class="form-group">
-            <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm Password">
-          </div>
-        </div>
-
-        <button class="btn-create" onclick="window.location.href='index-login.html';">Create Account →</button> <!--link dan den trang chu sau khi dang nhap, khong hoat dong dc la do button dang o trong form tag-->
-
-        <div class="divider">Sign up with</div>
-
-        <div class="social">
-  <button class="social-btn">
-    <img src="../img/facebook.png" alt="Facebook">
-    <span>Facebook</span>
-  </button>
-
-  <button class="social-btn">
-    <img src="../img/google.png" alt="Google">
-    <span>Google</span>
-  </button>
-
-  <button class="social-btn">
-    <img src="../img/microsoft.png" alt="Microsoft">
-    <span>Microsoft</span>
-  </button>
-</div>
-
-      </form>
+      <a class="btn-login" href="login.html">Login Up</a>
+      <a class="btn-signup" href="resign.html">Sign Up</a>
     </div>
-  </div>
+  </header>
 
-</main>
+  <main class="container">
+    <div class="image-box">
+      <img src="../img/baneresign.png" alt="Learning">
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="form-box">
+      <div class="form-inner">
+        <h2>Create Your Account</h2>
+
+        <form id="signup-form" novalidate>
+          <div class="row">
+            <div class="form-group">
+              <label for="firstName">Full Name</label>
+              <input id="firstName" name="firstName" type="text" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">&nbsp;</label>
+              <input id="lastName" name="lastName" type="text" placeholder="Last Name" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="Username" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Email ID" required>
+          </div>
+
+          <div class="row">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" placeholder="Enter Password" required>
+              <div id="password-strength-meter"
+                style="height: 4px; background: #eee; margin-top: 5px; border-radius: 2px; transition: width 0.3s;">
+                <div id="strength-bar" style="height: 100%; width: 0%; border-radius: 2px;"></div>
+              </div>
+              <div id="strength-text" style="font-size: 12px; margin-top: 2px; color: #666;"></div>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password"
+                required>
+            </div>
+          </div>
+
+          <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
+
+          <button class="btn-create" type="submit">Create Account →</button>
+
+          <div class="divider">Sign up with</div>
+
+          <div class="social">
+            <button class="social-btn" type="button">
+              <img src="../img/facebook.png" alt="Facebook">
+              <span>Facebook</span>
+            </button>
+
+            <button class="social-btn" type="button">
+              <img src="../img/google.png" alt="Google">
+              <span>Google</span>
+            </button>
+
+            <button class="social-btn" type="button">
+              <img src="../img/microsoft.png" alt="Microsoft">
+              <span>Microsoft</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('signup-form');
+      const msg = document.getElementById('form-message');
+      const submitBtn = form.querySelector('.btn-create');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        msg.textContent = '';
+
+        const data = {
+          firstName: form.firstName.value.trim(),
+          lastName: form.lastName.value.trim(),
+          username: form.username.value.trim(),
+          email: form.email.value.trim(),
+          password: form.password.value,
+          confirmPassword: form.confirmPassword.value
+        };
+
+        if (!data.firstName || !data.username || !data.email || !data.password) {
+          msg.textContent = 'Please complete all required fields.';
+          return;
+        }
+
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRe.test(data.email)) {
+          msg.textContent = 'Please enter a valid email address.';
+          form.email.focus();
+          return;
+        }
+
+        if (data.password.length < 6) {
+          msg.textContent = 'Password must be at least 6 characters.';
+          form.password.focus();
+          return;
+        }
+
+        if (data.password !== data.confirmPassword) {
+          msg.textContent = 'Passwords do not match.';
+          form.confirmPassword.focus();
+          return;
+        }
+
+        // Disable button and show creating status
+        submitBtn.disabled = true;
+        const originalText = submitBtn.innerHTML;
+        submitBtn.textContent = 'Creating...';
+
+        // Simulate server request
+        setTimeout(function () {
+          // Simulate success response
+          const success = true;
+
+          if (success) {
+            // SAVE TOKEN
+            const mockToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.RESIGN" + Date.now();
+            localStorage.setItem('authToken', mockToken);
+            console.log("Token saved (Resign):", mockToken);
+
+            submitBtn.textContent = 'Account created ✓';
+            // Redirect after short pause
+            setTimeout(function () {
+              window.location.href = 'login.html';
+            }, 900);
+          } else {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+            msg.textContent = 'There was an error creating your account. Please try again.';
+          }
+        }, 900);
+      });
+
+      // Password Strength Logic
+      const passwordInput = document.getElementById('password');
+      const strengthBar = document.getElementById('strength-bar');
+      const strengthText = document.getElementById('strength-text');
+
+      passwordInput.addEventListener('input', function () {
+        const val = passwordInput.value;
+        let strength = 0;
+        if (val.length >= 6) strength += 1;
+        if (val.length >= 10) strength += 1;
+        if (/[A-Z]/.test(val)) strength += 1;
+        if (/[0-9]/.test(val)) strength += 1;
+        if (/[^A-Za-z0-9]/.test(val)) strength += 1;
+
+        // Map score to UI
+        // 0-1: Weak (Red)
+        // 2-3: Medium (Orange/Yellow)
+        // 4-5: Strong (Green)
+
+        let color = '#eee';
+        let width = '0%';
+        let text = '';
+
+        if (val.length > 0) {
+          if (strength <= 2) {
+            color = '#d63333';
+            width = '33%';
+            text = 'Weak';
+          } else if (strength <= 4) {
+            color = '#ffa500';
+            width = '66%';
+            text = 'Medium';
+          } else {
+            color = '#1DB954'; // Spotify green or similar
+            width = '100%';
+            text = 'Strong';
+          }
+        }
+
+        strengthBar.style.width = width;
+        strengthBar.style.backgroundColor = color;
+        strengthText.textContent = text;
+        strengthText.style.color = color;
+      });
+
+    });
+  </script>
 
 </body>
+
 </html>
