@@ -1,23 +1,25 @@
 <header class="header">
   <div class="header-left">
-    <img src="../img/logo.png" class="logo-img">
-    <span class="brand">Byway</span>
-    <a href="#" class="nav-link">Categories</a>
+    <img src="../assets/images/logo.png" class="logo-img">
+    <a href="./index-login.html" class="byway-link">  <!-- Link dan ve trang chu -->
+      <span class="brand">Byway</span>
+    </a>
+    <a href="../pages/home.html" class="nav-link">Categories</a>
   </div>
 
   <div class="header-center">
     <div class="search-box">
-      <img src="../img/search.png" class="search-icon">
+      <img src="../assets/icons/search-icon.png" class="search-icon">
       <input type="text" placeholder="Search courses">
     </div>
   </div>
 
   <div class="header-right">
     <a href="#" class="nav-link">Teach on Byway</a>
-    <img src="../img/heart.png" class="header-icon">
-    <img src="../img/cart.png" class="header-icon">
-    <img src="../img/bell-01.png" class="header-icon">
-    <div class="avatar">J</div>
+    <img src="../assets/icons/heart.png" class="header-icon">
+    <a href="./checkout.html"><img src="../assets/icons/cart.png" class="header-icon"></a>  <!--Link dan den checkout (tam thoi)-->
+    <img src="../assets/icons/bell.png" class="header-icon">
+    <a href="./profile_profile.html"><div class="avatar">J</div></a>
   </div>
 </header>
 <style>
@@ -30,6 +32,13 @@
   border-bottom: 1px solid #e5e7eb;
   background: #fff;
   font-family: Arial, sans-serif;
+}
+
+/* Khong thay doi style cua logo khi nhan vao */
+.byway-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* LEFT */
