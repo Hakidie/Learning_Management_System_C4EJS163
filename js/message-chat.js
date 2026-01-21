@@ -1,34 +1,57 @@
-// 1. Get elements
-const chatBox = document.getElementById('chat-box');
-const messageInput = document.getElementById('message-input');
-const sendBtn = document.getElementById('send-btn');
-const teacherImgElement = document.getElementById('teacher-img');
-const teacherNameHeading = document.getElementById('teacher-name');
+// Get elements
+const chat_box = document.getElementById('chat-box');
+const message_input = document.getElementById('message-input');
+const send_button = document.getElementById('send-btn');
+const teacher_imgage = document.getElementById('teacher-img');
+const teacher_name = document.getElementById('teacher-name');
 
-// 2. Identify which teacher this is from the URL
+// Identify which teacher this is from the URL
 const urlParams = new URLSearchParams(window.location.search);
 const teacherImg = urlParams.get('img');
-teacherImgElement.src = teacherImg;
+teacher_imgage.src = teacherImg;
 const teacherName = urlParams.get('teacher') || "Unknown Teacher";
-teacherNameHeading.innerText = teacherName;
+teacher_name.innerText = teacherName;
 
-// 3. Unique key for localStorage (e.g., "chat_Ronald Richards")
+// Unique key for localStorage
 const storageKey = `chat_${teacherName}`;
 
-// 4. Function to render messages
+// Function to send message
+function sendMessage() {
+    const text = message_input.value.trim();
+    if (text === "") return;
+
+    const history = JSON.parse(localStorage.getItem(storageKey)) || [];
+    history.push({  sender: 'me',
+                    text: text,
+                    timestamp: new Date().getTime()
+                 });
+    
+    localStorage.setItem(storageKey, JSON.stringify(history));
+    message_input.value = ""; // Clear input
+    displayMessages(); // Refresh chat
+}
+
+// Event Listeners
+send_button.addEventListener('click', sendMessage);
+message_input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+});
+
+
+// Function to render messages
 function displayMessages() {
     const history = JSON.parse(localStorage.getItem(storageKey)) || [];
-    chatBox.innerHTML = ''; // Clear current view
+    chat_box.innerHTML = ''; // Clear current chat display
 
     let lastMessageTime = null;
     
     history.forEach(msg => {
-        const timestamp = msg.timestamp || new Date().getTime();
+        const timestamp = msg.timestamp
         const msgDate = new Date(timestamp);
         const timeString = msgDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const dateString = msgDate.toLocaleDateString([], { day: 'numeric', month: 'short' });
 
-        // If it's a new day or the first message, show a date divider in the middle
+        // If its a new day or the first message, show a date divider in the middle
         const isNewDay = !lastMessageTime || new Date(lastMessageTime).toDateString() !== msgDate.toDateString();
         if (isNewDay) {
             const dateDivider = document.createElement('div');
@@ -47,7 +70,7 @@ function displayMessages() {
             dateDivider.style.textAlign = "center";
             dateDivider.style.color = "#0F172A";
             dateDivider.innerText = dateString;
-            chatBox.appendChild(dateDivider);
+            chat_box.appendChild(dateDivider);
         }
         
         const isContinuous = lastMessageTime && (timestamp - lastMessageTime < 120000);
@@ -75,35 +98,13 @@ function displayMessages() {
                 ${msg.text}
             </span>
         `;
-        chatBox.appendChild(msgDiv);
+        chat_box.appendChild(msgDiv);
 
         lastMessageTime = msg.timestamp; // Update for the next loop
     });
     // Auto scroll to bottom
-    chatBox.scrollTop = chatBox.scrollHeight;
+    chat_box.scrollTop = chat_box.scrollHeight;
 }
-
-// 5. Function to send message
-function sendMessage() {
-    const text = messageInput.value.trim();
-    if (text === "") return;
-
-    const history = JSON.parse(localStorage.getItem(storageKey)) || [];
-    history.push({  sender: 'me',
-                    text: text,
-                    timestamp: new Date().getTime()
-                 });
-    
-    localStorage.setItem(storageKey, JSON.stringify(history));
-    messageInput.value = ""; // Clear input
-    displayMessages(); // Refresh chat
-}
-
-// Event Listeners
-sendBtn.addEventListener('click', sendMessage);
-messageInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendMessage();
-});
-
-// Initial Load
 displayMessages();
+
+

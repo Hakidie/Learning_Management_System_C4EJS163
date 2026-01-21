@@ -8,28 +8,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (history.length > 0) {
             // Get the very last message in the array
-            const lastEntry = history[history.length - 1];
+            const last_message = history[history.length - 1];
             
-            // 1. Update the message preview text
-            const msgPreview = document.getElementById(`msg-${name}`);
-            if (msgPreview) {
-                // If the message was sent by 'me', add a prefix
-                const prefix = lastEntry.sender === 'me' ? "You: " : "";
-                msgPreview.innerText = prefix + lastEntry.text;
+            // Display the message
+            const message_preview = document.getElementById(`msg-${name}`);
+            if (message_preview) {
+                const sender = last_message.sender === 'me' ? "You: " : "";
+                message_preview.innerText = sender + last_message.text;
             }
 
-            // 2. Update the time
-            const timeDisplay = document.getElementById(`time-${name}`);
-            if (timeDisplay) {
-                const msgDate = new Date(lastEntry.timestamp);
+            // Display the time
+            const time_display = document.getElementById(`time-${name}`);
+            if (time_display) {
+                const messsage_date = new Date(last_message.timestamp);
                 
-                // If it was today, show time. If older, show date.
-                const isToday = new Date().toDateString() === msgDate.toDateString();
+                // If it was today, show time. If older, show date
+                const today = new Date().toDateString() === messsage_date.toDateString();
                 
-                if (isToday) {
-                    timeDisplay.innerText = msgDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                if (today) {
+                    time_display.innerText = messsage_date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
                 } else {
-                    timeDisplay.innerText = msgDate.toLocaleDateString([], { day: 'numeric', month: 'short' });
+                    time_display.innerText = messsage_date.toLocaleDateString([], { day: 'numeric', month: 'short' });
                 }
             }
         }
