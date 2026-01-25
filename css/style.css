@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #fff;
+}
+
+/* HEADER */
+.header {
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn-signup {
+  padding: 8px 14px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+
+.image-box {
+  width: 50%;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-box {
+  width: 50%;
+  padding: 60px;
+}
+
+.form-box h2 {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-create {
+  margin-top: 10px;
+  padding: 14px;
+  width: 220px;
+  background: #1d0b20;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 30px 0;
+  text-align: center;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 40%;
+  background: #ddd;
+  position: absolute;
+  top: 50%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+}
+
+.social-btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #e3e3e3;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.social-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+.social-btn:hover {
+  background: #f9fafb;
+  border-color: #cbd5e1;
+}
