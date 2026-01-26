@@ -1,5 +1,5 @@
 /* Toolbar */
-.content-container .toolbar-container {
+.toolbar-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -8,7 +8,7 @@
     /* border: 1px solid yellow; */
 }
 
-.content-container .toolbar-container .title {
+.toolbar-container .title {
     width: 118px;
     height: 30px;
     white-space: nowrap;
@@ -25,9 +25,9 @@
     }
 }
 
-.content-container .toolbar-container .toolbar,
-.content-container .toolbar-container .toolbar .searchbar,
-.content-container .toolbar-container .toolbar .sort-container {
+.toolbar-container .toolbar,
+.toolbar-container .toolbar .searchbar,
+.toolbar-container .toolbar .sort-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +36,7 @@
     /* border: 1px solid orange; */
 }
 
-.content-container .toolbar-container .toolbar .searchbar {
+.toolbar-container .toolbar .searchbar {
     width: 300px;
     height: 44px;
     padding: 10px;
@@ -57,7 +57,7 @@
     }
 }
 
-.content-container .toolbar-container .toolbar .sort-container {
+.toolbar-container .toolbar .sort-container {
     gap: 15px;
 
     /* border: 1px solid red; */
@@ -87,6 +87,9 @@
         cursor: pointer;
     }
 }
+
+
+
 
 /* Position the containers */
 .dropdown-sort, .dropdown-filter {
