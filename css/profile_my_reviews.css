@@ -195,3 +195,46 @@ main {
 .card-container .pagination button:nth-last-child(2) {
     border-right: 0px solid #E2E8F0;
 }
+
+/* --- Responsive Reviews --- */
+
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        padding: 20px 30px;
+    }
+
+    .content-container,
+    .card-container {
+        width: 100%; 
+    }
+
+    .flex-cards .card {
+        gap: 20px; 
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        padding: 15px;
+    }
+
+    .flex-cards .card {
+        flex-direction: column-reverse; 
+        gap: 16px;
+    }
+
+    .flex-cards .card .card-button {
+        align-self: flex-end; 
+    }
+
+    .flex-cards .card .reviews h4 span {
+        display: block;
+        margin-top: 4px;
+        font-size: 16px;
+    }
+
+    .flex-cards .card .reviews .review p {
+        font-size: 14px; 
+    }
+}

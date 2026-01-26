@@ -114,3 +114,45 @@ main {
         color: #334155;
 }
 
+/* --- Responsive My Courses --- */
+
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        padding: 20px 30px;
+    }
+
+    .content-container,
+    .card-container {
+        width: 100%; 
+    }
+
+    .card-container .grid-cards {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        justify-content: center;
+    }
+
+    .card-container .grid-cards .card {
+        width: 100%; 
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    main {
+        padding: 15px;
+    }
+
+    .card-container .grid-cards {
+        grid-template-columns: 1fr; 
+    }
+
+    .card-container .grid-cards .card .progress-bar {
+        width: 100%; 
+    }
+
+    .card-container .grid-cards .card .progress-bar .progress {
+        max-width: 100%;
+    }
+}
+

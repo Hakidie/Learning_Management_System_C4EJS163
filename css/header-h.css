@@ -109,3 +109,51 @@ header a {
 .searchbar-container input::placeholder {
     color: #334155;
 }
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 30px;
+    }
+    
+    .searchbar-container {
+        width: 100%; 
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap; 
+        height: auto;   
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .categories-container, 
+    .teach-container,
+    .profile-container .my-courses-link {
+        display: none; 
+    }
+
+    .searchbar-container {
+        order: 3;     
+        width: 100%;  
+        max-width: none;
+    }
+
+    .profile-container {
+        width: auto;  
+        margin-left: auto;
+        gap: 15px;
+    }
+
+    .logo-container {
+        order: 1;
+    }
+
+    .profile-container {
+        order: 2;
+    }
+}

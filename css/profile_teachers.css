@@ -109,3 +109,48 @@ main {
     cursor: pointer;
 }
 
+/* --- Responsive Teachers --- */
+
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        padding: 20px 30px;
+    }
+
+    .content-container,
+    .card-container {
+        width: 100%; 
+    }
+
+    .card-container .grid-cards {
+        width: 100%;
+        height: auto; 
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        justify-content: center;
+    }
+
+    .card-container .grid-cards .card {
+        width: 100%;
+        max-width: 250px; 
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 15px;
+    }
+
+    .card-container .grid-cards {
+        grid-template-columns: 1fr; 
+    }
+
+    .card-container .grid-cards .card {
+        max-width: 100%;
+        height: auto; 
+    }
+
+    .card-container .grid-cards .card button {
+        width: 100%; 
+    }
+}
