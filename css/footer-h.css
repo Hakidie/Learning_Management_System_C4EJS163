@@ -84,3 +84,37 @@ footer .contact-container p {
 footer .contact-container a {
     margin-top: 24px;
 }
+
+/* --- Responsive Footer --- */
+
+@media (max-width: 1024px) {
+    footer {
+        padding: 40px 30px;
+        height: auto; 
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    footer .logo-container {
+        width: 100%; 
+        height: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    footer {
+        flex-direction: column; 
+        align-items: flex-start;
+        padding: 40px 20px;
+    }
+
+    footer .help-container,
+    footer .programs-container,
+    footer .contact-container {
+        width: 100%;
+    }
+
+    footer .logo-container p {
+        max-width: 300px; 
+    }
+}
